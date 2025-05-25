@@ -6,130 +6,90 @@
   <title>Sunil Sanjay Jadhav - Portfolio</title>
   <style>
     :root {
-      --bg: #f0f0f0;
-      --text: #333;
-      --primary: #0077cc;
-      --card: white;
+      --bg-color: #f0f0f0;
+      --text-color: #333;
+      --header-bg: #0077cc;
+      --header-text: white;
+      --section-bg: white;
+      --footer-bg: #222;
+      --footer-text: white;
     }
 
-    body.dark {
-      --bg: #121212;
-      --text: #eee;
-      --primary: #4fc3f7;
-      --card: #1e1e1e;
+    body.dark-mode {
+      --bg-color: #121212;
+      --text-color: #f0f0f0;
+      --header-bg: #1e1e1e;
+      --header-text: #00ccff;
+      --section-bg: #1c1c1c;
+      --footer-bg: #000;
+      --footer-text: #bbb;
     }
 
     body {
       font-family: Arial, sans-serif;
       margin: 0;
       padding: 0;
-      background: var(--bg);
-      color: var(--text);
-      transition: background 0.3s, color 0.3s;
+      background: var(--bg-color);
+      color: var(--text-color);
+      transition: all 0.3s ease;
     }
 
     header {
-      background: var(--primary);
-      color: white;
+      background: var(--header-bg);
+      color: var(--header-text);
       padding: 40px 20px;
       text-align: center;
+      position: relative;
     }
 
-    .toggle-btn {
+    #toggle-theme {
       position: absolute;
       top: 20px;
       right: 20px;
       background: white;
-      color: var(--primary);
       border: none;
-      padding: 10px 20px;
-      border-radius: 20px;
+      padding: 10px 15px;
       cursor: pointer;
+      border-radius: 6px;
     }
 
     section {
       padding: 30px 20px;
       max-width: 800px;
       margin: 20px auto;
-      background: var(--card);
+      background: var(--section-bg);
       border-radius: 8px;
       box-shadow: 0 0 10px rgba(0,0,0,0.1);
     }
 
     h2 {
-      color: var(--primary);
-    } 
+      color: var(--header-bg);
+    }
 
     ul {
+      list-style: square;
       padding-left: 20px;
     }
 
-    .skills-bar div {
-      margin-bottom: 10px;
-    }
-
-    .bar {
-      background: #ccc;
-      border-radius: 20px;
-      overflow: hidden;
-      height: 10px;
-    }
-
-    .bar-fill {
-      height: 10px;
-      background: var(--primary);
-      width: 0;
-      animation: fill 2s forwards;
-    }
-
-    @keyframes fill {
-      to { width: 100%; }
-    }
-
-    .gallery img {
-      width: 100%;
-      border-radius: 8px;
-      margin-top: 10px;
-    }
-
     a {
-      color: var(--primary);
+      color: var(--header-bg);
       text-decoration: none;
     }
 
     footer {
       text-align: center;
       padding: 20px;
-      background: #222;
-      color: white;
+      background: var(--footer-bg);
+      color: var(--footer-text);
       margin-top: 30px;
-    }
-
-    form input, form textarea {
-      width: 100%;
-      padding: 10px;
-      margin-top: 8px;
-      border: 1px solid #ccc;
-      border-radius: 5px;
-    }
-
-    form button {
-      background: var(--primary);
-      color: white;
-      border: none;
-      padding: 10px 20px;
-      margin-top: 10px;
-      border-radius: 5px;
-      cursor: pointer;
     }
   </style>
 </head>
 <body>
-  <button class="toggle-btn" onclick="toggleMode()">Toggle Mode</button>
-
   <header>
     <h1>Sunil Sanjay Jadhav</h1>
     <p>Student | Data Entry | Website Creator</p>
+    <button id="toggle-theme">Toggle Dark Mode</button>
   </header>
 
   <section id="about">
@@ -139,20 +99,11 @@
 
   <section id="skills">
     <h2>Skills</h2>
-    <div class="skills-bar">
-      <div>
-        Data Entry
-        <div class="bar"><div class="bar-fill" style="width:90%"></div></div>
-      </div>
-      <div>
-        Copy Paste Work
-        <div class="bar"><div class="bar-fill" style="width:95%"></div></div>
-      </div>
-      <div>
-        Website Creation
-        <div class="bar"><div class="bar-fill" style="width:80%"></div></div>
-      </div>
-    </div>
+    <ul>
+      <li>Data Entry</li>
+      <li>Copy Paste Work</li>
+      <li>Website Creation</li>
+    </ul>
   </section>
 
   <section id="projects">
@@ -160,36 +111,13 @@
     <div class="project">
       <h3>My Portfolio Website</h3>
       <p>A simple and clean personal portfolio website created using HTML and CSS to showcase my skills and projects.</p>
-      <div class="gallery">
-        <img src="/storage/emulated/0/DCIM/Screenshots/Screenshot_2025_0525_154945.jpg" alt="Project Screenshot">
-      </div>
     </div>
-  </section>
-
-  <section id="testimonials">
-    <h2>Testimonials</h2>
-    <blockquote>
-      "Sunil is a very hardworking and reliable student. His work in website creation and data entry is always accurate and on time."  
-      — <em>Rahul Patil, Mentor</em>
-    </blockquote>
-    <blockquote>
-      "I was impressed by Sunil’s portfolio website. It's clean, functional, and shows his dedication towards learning."  
-      — <em>Sneha Deshmukh, Web Designer</em>
-    </blockquote>
   </section>
 
   <section id="contact">
     <h2>Contact</h2>
     <p>Email: <a href="mailto:suniljadhav31k19@gmail.com">suniljadhav31k19@gmail.com</a></p>
     <p>GitHub: <a href="https://github.com/suniljadhav84" target="_blank">github.com/suniljadhav84</a></p>
-
-    <form>
-      <h3>Contact Form</h3>
-      <input type="text" placeholder="Your Name" required />
-      <input type="email" placeholder="Your Email" required />
-      <textarea placeholder="Your Message" rows="4" required></textarea>
-      <button type="submit">Send</button>
-    </form>
   </section>
 
   <footer>
@@ -197,9 +125,10 @@
   </footer>
 
   <script>
-    function toggleMode() {
-      document.body.classList.toggle('dark');
-    }
+    const toggleBtn = document.getElementById('toggle-theme');
+    toggleBtn.addEventListener('click', () => {
+      document.body.classList.toggle('dark-mode');
+    });
   </script>
 </body>
 </html>
